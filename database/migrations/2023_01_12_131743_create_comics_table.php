@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             $table->text('description')->nullable();
-            $table->string('thumb', 150)->default('https://cdn.shopify.com/s/files/1/0576/5958/8655/collections/DC_Comics_Coming_Soon.png?v=1663180666');
-            $table->double('price', 3, 2)->nullable();
+            $table->string('thumb', 250)->default('https://cdn.shopify.com/s/files/1/0576/5958/8655/collections/DC_Comics_Coming_Soon.png?v=1663180666');
+            $table->double('price', 10, 2)->nullable();
             $table->string('series', 50);
             $table->date('sale_date')->nullable();
             $table->string('type', 100);
