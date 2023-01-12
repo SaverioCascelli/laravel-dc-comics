@@ -4,30 +4,26 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">type</th>
+                <th scope="col">price</th>
+                <th scope="col">actions</th>
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            @foreach ($comics as $comic)
+                <tr>
+                    <td>{{ $comic->id }}</td>
+                    <td>{{ $comic->title }}</td>
+                    <td>{{ $comic->type }}</td>
+                    <td>{{ $comic->price }}</td>
+                    <td>
+                        <a href="{{ route('comics.show', $comic) }}">detail</a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 @endsection
